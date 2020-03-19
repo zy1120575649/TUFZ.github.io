@@ -10,7 +10,7 @@ document.addEventListener('visibilitychange', function () {
     }
     else {
         $('[rel="icon"]').attr('href', "/favicon.ico");
-        document.title = '(欢迎光临 O(∩_∩)O' + OriginTitle;
+        document.title = '(欢迎光临 O(∩_∩)O';
         titleTime = setTimeout(function () {
             document.title = OriginTitle;
         }, 2000);
