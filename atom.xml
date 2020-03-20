@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itufz.com/"/>
-  <updated>2020-03-20T01:42:48.043Z</updated>
+  <updated>2020-03-20T01:47:40.913Z</updated>
   <id>http://itufz.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初识Java开发</title>
+    <link href="http://itufz.com/2020/03/20/%E5%88%9D%E8%AF%86Java%E5%BC%80%E5%8F%91/"/>
+    <id>http://itufz.com/2020/03/20/%E5%88%9D%E8%AF%86Java%E5%BC%80%E5%8F%91/</id>
+    <published>2020-03-20T01:46:51.000Z</published>
+    <updated>2020-03-20T01:47:40.913Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Java-编程起步"><a href="#Java-编程起步" class="headerlink" title="Java 编程起步"></a>Java 编程起步</h1><p>编写 Java 程序可以不使用特定编辑器，所有 Java 程序的后缀都是 <code>*.java</code>，我们可以建立一个目录保存所有的程序源代码</p><a id="more"></a>    <div id="aplayer-bjqsaQsp" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="1346472029" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"    ></div><p>定义第一个程序代码：</p><p><code>Hello.java</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World !"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Java 程序需要经过两次处理才可以正常执行：</p><ul><li>对源代码程序进行编译：<code>javac Hello.java</code>，编译之后会生成一个 <code>Hello.class</code> 的字节码文件，整个过程原理就是利用 JVM 编译出一套与操作平台无关的字节码文件（<code>*.class</code>）</li><li>在 JVM 上进行程序的解释：<code>java Hello</code>，<strong>注意：</strong> 这里解释的是字节码文件，字节码文件的后缀（<code>*.class</code>）是不需要编写的</li></ul><p>解释一下第一个程序：</p><ol><li>在 Java 程序开发中最基础的单元是类，所有的程序都必须封装在类当中执行，而类的基本定义语法如下：</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>] <span class="class"><span class="keyword">class</span> 类名称 </span>&#123;&#125;</span><br></pre></td></tr></table></figure><p>在程序中定义的类名称是：<code>Hello</code>，类的定义有两种形式：</p><ul><li><code>public class 类名称 {}</code>：类名称必须与文件名称保持一致，在一个 <code>*.java</code> 文件里只能有一个 <code>public class</code> 定义</li><li><code>class 类名称 {}</code>：类名称可以与文件名称不一致，但是编译后的 <code>*.class</code> 的名称是 <code>calss</code> 定义的类，解释的时候要求解释生成的 <code>*.class</code> 字节码文件，在一个 <code>*.java</code> 文件里面可以有多个 <code>class</code> 定义，并且编译之后会生成不同的 <code>*.class</code> 文件</li></ul><p><strong>注意：</strong> 关于源代码类定义的问题：</p><ul><li>在项目开发中，很少会出现在一个 <code>*.java</code> 源代码里面定义多个 <code>class</code> 类的情况，所以一般在一个 <code>*.java</code> 源代码里就定义一个 <code>public class</code> 类就够了</li><li>Java 语言有着明确的要求，定义类名称的时候要求每一个单词的首字母必须大写，eg. HelloWorld、TestDemo 这样才符合标准</li></ul><ol start="2"><li>主方法：是所有程序执行的起点，并且一定要定义在类中，Java 的主方法定义：</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名称 </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 程序的代码由此开始执行</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>注意：</strong> <code>String args[]</code> &lt;=&gt; <code>String [] args</code></p><p>必须记住主方法怎么写，即使没有代码补全也能写出来，主方法所在的类统一称为 “主类”，所有的 “主类” 都使用 <code>public class 类名称 {}</code> 来定义</p><ol start="3"><li>屏幕打印（系统输出）：可以直接在命令行方式下进行内容的显示，有如下两种语法：</li></ol><ul><li>输出之后追加换行：<code>System.out.println(输出内容);</code></li><li>输出之后不追加换行：<code>System.out.print(输出内容);</code></li></ul><h1 id="JShell-工具"><a href="#JShell-工具" class="headerlink" title="JShell 工具"></a>JShell 工具</h1><p>Shell 是脚本程序的含义，在很多编程语言里面为了方便使用者进行代码开发，都会有 Shell 交互式编程环境，可能只是为了一些简短的程序验证，但是在 Java 里面需要编写很多的结构代码才能实现，所以为了解决这样的麻烦，提供了 JShell 指令，直接 cmd 执行指令 <code>jshell</code> 即可</p><p>除了可以直接在 JShell 命令之中进行程序的编写之外，也可以将一些内容交给一些文件来进行保存</p><p>eg. 在 <code>D:/hello.txt</code> 写入如下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system.out.println(&quot;hello&quot;);</span><br></pre></td></tr></table></figure><p>在 JShell 执行指令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;open d:&#x2F;hello.txt</span><br></pre></td></tr></table></figure><p>屏幕能够成功输出 <code>hello</code></p><p>所以使用 JShell 只需要编写核心结构的代码即可，减少了对于结构化的需求，执行指令 <code>/exit</code> 即可退出 JShell 交互式界面</p><h1 id="CLASSPATH-环境属性"><a href="#CLASSPATH-环境属性" class="headerlink" title="CLASSPATH 环境属性"></a>CLASSPATH 环境属性</h1><p>CLASSPATH 完整理解非常复杂，这里暂时了解其概念</p><p>eg. 在 <code>D:/JavaCode</code> 下有一个叫 <code>Hello.class</code> 的字节码文件，当前用户所在的目录为 <code>D:/JavaCode</code>，那么在这种情况之下可以直接使用 <code>java</code> 命令进行 <code>Hello.class</code> 字节码文件的解释，但是如果现在用户脱离了这个目录，去到了 <code>C:/</code> （C 盘目录下并没有 <code>Hello.class</code> 字节码文件），如果再次执行程序解释，会出现错误提示：<code>找不到或无法加载主类 Hello</code></p><p>如果我们要执行不同目录下的程序，就需要依靠 CLASSPATH 环境属性</p><p>定义 CLASSPATH 环境属性：<code>SET CLASSPATH = D:/JavaCode</code></p><p>设置了 CLASSPATH 之后，这个时候在 Java 程序解释的时候会自动通过 CLASSPATH 所设置的路径进行类的加载，所以可知：JVM 解释程序的时候需要得到 CLASSPATH 的支持</p><p>但是在默认情况下，所有解释的类都是从当前所在的目录中加载的，所以可知：CLASSPATH 的默认设置为当前所在目录加载类文件，很明显如果在非当前目录设置 CLASSPATH 就会使整个系统操作混乱，所以最好采用默认的设置，如果这时候想只通过当前目录加载，则可以将 CLASSPATH 设置为 <code>.</code></p><p>eg. 设置从当前所在路径加载类 <code>SET CLASSPATH = .</code></p><p>有些时候如果安装了一些与 Java 开发相关的程序，它可能会自动修改默认的 CLASSPATH，所以就需要自己设置回来</p><p><strong>注意：</strong> 现在 CLASSPATH 是在一个命令行下的配置，如果该命令行关闭了，那么相关的属性配置也将消失，所以应该将其定义为全局属性，则可以直接在系统中追加一个属性信息</p><p>配置方法：新建用户变量 <code>CLASSPATH = .</code></p><p>PATH 和 CLASSPATH 的区别？</p><ul><li>PATH：是操作系统提供的路径配置，定义所有可执行程序的路径</li><li>CLASSPATH：是 JRE 提供的，用于定义 Java 程序解释时的类加载路径，默认设置为当前目录加载，可以通过 <code>SETCLASSPATH = 路径</code> 的命令形式来进行定义</li></ul><p>JVM 解释字节码文件的寻访过程：JVM ➡ CLASSPATH 定义的路径 ➡ 加载字节码文件，所以 CLASSPATH 是 Java 定义的环境属性，是在 Java 程序解释的时候使用的</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Java-编程起步&quot;&gt;&lt;a href=&quot;#Java-编程起步&quot; class=&quot;headerlink&quot; title=&quot;Java 编程起步&quot;&gt;&lt;/a&gt;Java 编程起步&lt;/h1&gt;&lt;p&gt;编写 Java 程序可以不使用特定编辑器，所有 Java 程序的后缀都是 &lt;code&gt;*.java&lt;/code&gt;，我们可以建立一个目录保存所有的程序源代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Java 学习笔记" scheme="http://itufz.com/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Java" scheme="http://itufz.com/tags/Java/"/>
+    
+      <category term="学习笔记" scheme="http://itufz.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建JAVA开发环境</title>
+    <link href="http://itufz.com/2020/03/20/%E6%90%AD%E5%BB%BAJAVA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://itufz.com/2020/03/20/%E6%90%AD%E5%BB%BAJAVA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2020-03-20T01:45:12.000Z</published>
+    <updated>2020-03-20T01:46:04.184Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="JDK-简介"><a href="#JDK-简介" class="headerlink" title="JDK 简介"></a>JDK 简介</h1><p>Java 语言属于编译型和解释型语言的开发语言，如果要进行 Java 开发，一定要进行 JDK （Java 开发工具）的安装配置，JDK 可以实现 Java 语言的编译与解释</p><a id="more"></a><ul><li>如果进行实际的项目开发的生产环境部署，现阶段还是应该以使用 JDK 1.8 版本为主</li><li>JDK 1.9 和 JDK 1.10 差别不大</li><li>JRE 指的是 Java 运行时环境，只提供程序的解释功能，不提供程序的开发功能，当本机上已经配置好了 JDK 之后，将自动进行 JRE 的更新</li></ul><h1 id="JDK-安装与配置"><a href="#JDK-安装与配置" class="headerlink" title="JDK 安装与配置"></a>JDK 安装与配置</h1><p>安装：不会就自行百度</p><p>在 JDK 里所有的可执行程序的路径为：X:\xx\jdk-xx\bin，主要使用 <code>javac.exe</code> 和 <code>java.exe</code>，但是这两个程序并不属于 Windows 本身，如果想要在命令行里面直接使用，就必须在 Windows 的系统环境之中进行可执行程序的路径配置</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JDK-简介&quot;&gt;&lt;a href=&quot;#JDK-简介&quot; class=&quot;headerlink&quot; title=&quot;JDK 简介&quot;&gt;&lt;/a&gt;JDK 简介&lt;/h1&gt;&lt;p&gt;Java 语言属于编译型和解释型语言的开发语言，如果要进行 Java 开发，一定要进行 JDK （Java 开发工具）的安装配置，JDK 可以实现 Java 语言的编译与解释&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Java 学习笔记" scheme="http://itufz.com/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Java" scheme="http://itufz.com/tags/Java/"/>
+    
+      <category term="学习笔记" scheme="http://itufz.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 语言简介【Java 学习笔记 01】</title>
@@ -38,54 +88,6 @@
       <category term="Java" scheme="http://itufz.com/tags/Java/"/>
     
       <category term="学习笔记" scheme="http://itufz.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ayer 更新</title>
-    <link href="http://itufz.com/2020/03/20/TUFZA/"/>
-    <id>http://itufz.com/2020/03/20/TUFZA/</id>
-    <published>2020-03-20T00:58:54.000Z</published>
-    <updated>2020-03-20T01:06:32.805Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>这里是摘要</p><a id="more"></a>    <div id="aplayer-FNxmPcJi" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="1346472029" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"    ></div><p>这里是正文</p><p>注意：description 和 <!-- more --> 方式显示摘要二选一即可，部分主题不支持description，每个配置英文冒号后面要空一格，不同主题配置有所差异，具体要参考主题文档</p><p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/cover.png" alt="xx"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里是摘要&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="http://itufz.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="技术" scheme="http://itufz.com/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文章名称</title>
-    <link href="http://itufz.com/2020/03/20/TUFZ/"/>
-    <id>http://itufz.com/2020/03/20/TUFZ/</id>
-    <published>2020-03-19T17:16:54.644Z</published>
-    <updated>2020-03-20T01:06:44.446Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>这里是摘要</p><a id="more"></a>    <div id="aplayer-LqlNxKRt" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="1346472029" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"    ></div><p>这里是正文</p><p>注意：description 和 <!-- more --> 方式显示摘要二选一即可，部分主题不支持description，每个配置英文冒号后面要空一格，不同主题配置有所差异，具体要参考主题文档</p><p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/cover.png" alt="xx"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里是摘要&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="文章分类" scheme="http://itufz.com/categories/%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/"/>
-    
-    
-      <category term="文章标签一" scheme="http://itufz.com/tags/%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE%E4%B8%80/"/>
-    
-      <category term="文章标签二" scheme="http://itufz.com/tags/%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE%E4%BA%8C/"/>
     
   </entry>
   
