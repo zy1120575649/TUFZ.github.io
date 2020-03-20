@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>TUFZ</title>
+  <title>TUFZ&#39;s Blog</title>
   <icon>https://www.gravatar.com/avatar/9e970c58d441a1f42dead553ef9ca78d</icon>
   <subtitle>静心守志</subtitle>
   <link href="/atom.xml" rel="self"/>
