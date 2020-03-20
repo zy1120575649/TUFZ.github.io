@@ -7,13 +7,11 @@ tags:
 categories: Java 学习笔记
 ---
 
-# Java 编程起步
-
 编写 Java 程序可以不使用特定编辑器，所有 Java 程序的后缀都是 `*.java`，我们可以建立一个目录保存所有的程序源代码
 
 <!-- more -->
 
-{% meting "1346472029" "netease" "song" "theme:#555" "mutex:true" "listmaxheight:340px" "preload:auto" %}
+# Java 编程起步
 
 定义第一个程序代码：
 
