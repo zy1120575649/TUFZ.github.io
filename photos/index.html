@@ -172,7 +172,7 @@
         path: window.location.pathname,
         notify: 'false',
         verify: 'false',
-        avatar: 'retro',
+        avatar: 'monsterid',
         placeholder: '给我的文章加点评论吧~',
         recordIP: true
     });
@@ -266,7 +266,7 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "alive: "+dnum+" d "; 
+        document.getElementById("timeDate").innerHTML = "Alive: "+dnum+" d "; 
         document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s"; 
     } 
 setInterval("createtime()",250);
