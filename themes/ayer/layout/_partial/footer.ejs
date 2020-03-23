@@ -1,11 +1,102 @@
 <footer class="footer">
   <div class="outer">
-    <ul class="list-inline">
-      <li>
-        &copy;
-        <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %>
-        <%= config.author || config.title %>
-      </li>
+    <br>
+    <div style="display: flex; flex-flow: row nowrap; justify-content: center;">
+      <a href="https://github.com/TUFZ" target="_blank" rel="external nofollow noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/footer/github.png" alt="" style="height: 20px; width: 20px;"></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://blog.csdn.net/qq_44475551" target="_blank" rel="external nofollow noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/footer/csdn.png" alt="" style="height: 20px; width: 20px;"></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="mailto:admin@itufz.com" target="_blank" rel="external nofollow noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/footer/email.png" alt="" style="height: 20px; width: 20px;"></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1431482426&amp;site=qq&amp;menu=yes" target="_blank" rel="external nofollow noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/footer/qq.png" alt="" style="height: 20px; width: 20px;"></a>
+    </div>
+    <!-- <ul class="list-inline"> 原版-->
+      <!-- <li> 原版-->
+        <br>
+        <div style="display: flex; flex-flow: row nowrap; justify-content: center;">
+        Copyright &copy;
+        <a class="copyright" href="https://itufz.com/" target="_blank" style="text-decoration: none; color: black;">&nbsp;TUFZ's Blog</a>
+        <!-- <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %>
+        <%= config.author || config.title %> 原版-->
+      <!-- </li> 原版-->
+      <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <% if (theme.icp&&theme.icp.enable){ %>
+      <!-- <li> 原版-->
+        <a href="<%= theme.icp.url %>" target="_black"><%= theme.icp.text %></a>
+      <!-- </li> 原版-->
+      <!-- <li> 原版-->
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <span id="timeDate" style="vertical-align: middle;">载入天数...</span><span id="times" style="vertical-align: middle;">载入时分秒...</span>
+        <script>
+          var now = new Date(); 
+          function createtime() { 
+            var grt= new Date("03/20/2020 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+              mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+              seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+              snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+              document.getElementById("timeDate").innerHTML = "我已经等了你: "+dnum+" 天"; 
+              document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分钟 " + snum + " 秒"; 
+          } 
+          setInterval("createtime()",250);
+        </script>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="https://tongji.baidu.com/web/welcome/ico?s=169fbcc0e04223980097d96c4d22e688" target="_blank" style="color: black; text-decoration: none;">百度统计</a> 
+        <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?169fbcc0e04223980097d96c4d22e688";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>          
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <!-- <li> 原版-->
+          <!-- cnzz统计 -->
+          <!-- <% if (theme.cnzz&&theme.cnzz.enable){ %>
+          <script type="text/javascript" src='<%= theme.cnzz.url%>'></script>
+          <% } %> 原版-->
+          <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278709084'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278709084%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        <!-- </li> 原版-->
+      </div>
+      <!-- </li> 原版-->
+    <!-- </ul> 原版-->
+    <!-- <ul class="list-inline"> 原版-->
+      <!-- <li> 原版-->
+        <br>
+      <div style="display: flex; flex-flow: row nowrap; justify-content: center;">
+        <div style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #4DC820; margin: 5px 3px 5px 3px;">
+          <a href="https://hexo.io/" style="color: #fff; text-decoration: none;" target="_blank" title="由 Hexo 强力驱动" rel="license">
+          <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">Powered</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #4DC820 !important;">Hexo</span></a>
+        </div>
+        <div  style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #FFA500; margin: 5px 3px 5px 3px;">
+          <a href="https://github.com/Shen-Yu/hexo-theme-ayer" style="color: #fff; text-decoration: none;" target="_blank" title="站点使用 Ayer 主题" rel="license">
+          <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">Theme</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #FFA500 !important;">Ayer</span></a>
+        </div>
+        <div  style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #D8B024; margin: 5px 3px 5px 3px;">
+          <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;" id="busuanzi_container_site_pv">PV</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #D8B024 !important;" id="busuanzi_value_site_pv"></span>
+        </div>
+        <div  style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #8833D7; margin: 5px 3px 5px 3px;">
+          <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;" id="busuanzi_container_site_uv">UV</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #8833D7 !important;" id="busuanzi_value_site_uv"></span>
+        </div>
+        <div  style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #F26BAE; margin: 5px 3px 5px 3px;">
+          <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">WordCount</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #F26BAE !important;"><%= totalcount(site) %></span>
+        </div>
+      </div>
+      <!-- </li>
       <li>
         <% if (theme.pageFooter){ %>
         Powered by
@@ -14,44 +105,19 @@
         <%- hexoLink %> Theme <%- themeLink %>
         <% } %>
       </li>
-    </ul>
-    <ul class="list-inline">
-      <li>
+      <li> 原版
         <% if (theme.busuanzi && theme.busuanzi.enable){ %>
         <%# "不蒜子统计" %>
         <%- partial('post/busuanzi') %>
         <% } %>
       </li>
-      <% if (theme.icp&&theme.icp.enable){ %>
+      <% } %> 原版-->
+      <!-- 
       <li>
-        <a href="<%= theme.icp.url %>" target="_black"><%= theme.icp.text %></a>
+        <i class="fas fa-chart-area"></i>
+        <span class="post-count">WordCount: <%= totalcount(site) %></span>
       </li>
-      <% } %>
-      <li>
-        <!-- cnzz统计 -->
-        <% if (theme.cnzz&&theme.cnzz.enable){ %>
-        <script type="text/javascript" src='<%= theme.cnzz.url%>'></script>
-        <% } %>
-      </li>
-    </ul>
+    </ul> 原版-->
   </div>
-
-<span id="timeDate" style="vertical-align: middle;">载入天数...</span><span id="times" style="vertical-align: middle;">载入时分秒...</span>
-<script>
-    var now = new Date(); 
-    function createtime() { 
-        var grt= new Date("03/20/2020 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
-        now.setTime(now.getTime()+250); 
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "Alive: "+dnum+" d "; 
-        document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s"; 
-    } 
-setInterval("createtime()",250);
-</script>
 
 </footer>

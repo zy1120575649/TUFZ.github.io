@@ -1,5 +1,5 @@
 ---
-title: 搭建JAVA开发环境【Java 学习笔记 02】
+title: 搭建 Java 开发环境【Java 学习笔记 02】
 date: 2020-03-20 09:45:12
 tags:
 	- Java

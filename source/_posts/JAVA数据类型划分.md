@@ -1,5 +1,5 @@
 ---
-title: JAVA数据类型划分【Java 学习笔记 05】
+title: Java 数据类型划分【Java 学习笔记 05】
 date: 2020-03-20 14:16:57
 tags:
 	- Java

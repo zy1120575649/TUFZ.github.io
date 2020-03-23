@@ -1,5 +1,5 @@
 ---
-title: Java语言简介【Java 学习笔记 01】
+title: Java 语言简介【Java 学习笔记 01】
 date: 2020-03-20 09:28:44
 tags:
 	- Java
