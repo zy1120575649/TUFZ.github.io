@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.1k字</span>
+            <span class="post-count">1.4k字</span>
         </span>
     </span>
 
@@ -74,7 +74,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4分钟</span>
+            <span class="post-count">5分钟</span>
         </span>
     </span>
 </div>
@@ -133,7 +133,7 @@
 <p>安装好之后按理说就可以直接使用了，但是最好先配置一下 MetingJS，以免某些平台的音乐资源无法被解析，打开站点的配置文件，写入如下配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">    meting: true</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建歌单页面"><a href="#创建歌单页面" class="headerlink" title="创建歌单页面"></a>创建歌单页面</h2><p>👉<a href="https://www.itufz.com/playlist/" target="_blank" rel="noopener">这里</a>👈是我的歌单界面</p>
+<h2 id="创建歌单页面"><a href="#创建歌单页面" class="headerlink" title="创建歌单页面"></a>创建歌单页面</h2><p>👉<a href="https://www.itufz.com/playlist/" target="_blank" rel="noopener">这里</a>👈是我的歌单页面</p>
 <p>1、首先我们新建一个 playlist </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page playlist</span><br></pre></td></tr></table></figure>
 
@@ -141,7 +141,7 @@
 <p>执行完新建页面命令之后，在 <code>Hexo\source</code> 文件夹下面会生成一个 playlist 文件夹，该文件夹里面有一个 index.md文件，这个 <code>.md</code> 文件会经过渲染解析生成 playlist 页面，所以我们所有关于页面的代码都在这里编写</p>
 <p><strong>注意：</strong>Markdown 真的很强大，可以在里面直接写前端代码</p>
 <p>以下是我的 index.md</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 音乐</span><br><span class="line">date: 2020-03-20 12:24:57</span><br><span class="line">type: &quot;playlist&quot;</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">音乐的力量💪</span><br><span class="line"></span><br><span class="line">&#123;% meting &quot;4924170567&quot; &quot;netease&quot; &quot;playlist&quot; &quot;theme:#FF4081&quot; &quot;mode:circulation&quot; &quot;mutex:true&quot; &quot;listmaxheight:340px&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 音乐</span><br><span class="line">type: &quot;playlist&quot;</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">音乐的力量💪</span><br><span class="line"></span><br><span class="line">&#123;% meting &quot;4924170567&quot; &quot;netease&quot; &quot;playlist&quot; &quot;theme:#FF4081&quot; &quot;mode:circulation&quot; &quot;mutex:true&quot; &quot;listmaxheight:340px&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上 <code>4924170567</code> 是歌单的 id，随后 “netease” 表示音乐平台是网易云音乐，后面的可以默认或者查看官方说明进行修改</p>
 <p>3、配置访问路径</p>
@@ -156,6 +156,15 @@
 <p>aplayer 是支持给单篇文章添加音乐的，但是我在使用中却发现：当我给文章添加了音乐之后，文章的 TOC 就不能使用了</p>
 <p>该问题暂时未解决，该问题可能只在主题 ayer 上出现，其他主题未测试</p>
 <h2 id="音乐更新时间"><a href="#音乐更新时间" class="headerlink" title="音乐更新时间"></a>音乐更新时间</h2><p>我是使用网易云音乐歌单来实现音乐页面的歌曲更新的，每当网易云音乐歌单收藏里更新了音乐之后，一般 12 个小时之后博客才会更新</p>
+<h1 id="配置相册"><a href="#配置相册" class="headerlink" title="配置相册"></a>配置相册</h1><p>👉<a href="https://www.itufz.com/photos/" target="_blank" rel="noopener">这里</a>👈是我的相册页面</p>
+<p>配置相册跟配置音乐页面的原理一样的，先新建一个相册页面，在跟目录执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page photos</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>Hexo\source</code> 下会生成一个 photos 文件夹，里面有一个 index.md 文件，文件配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 相册</span><br><span class="line">type: &quot;photos&quot;</span><br><span class="line"></span><br><span class="line">albums: [</span><br><span class="line">		[&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;TUFZ&#x2F;ImgHosting&#x2F;&#x2F;TUFZ-Img&#x2F;cover&#x2F;cover1.jpg&quot;, &quot;Cover1&quot;],</span><br><span class="line">		[&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;TUFZ&#x2F;ImgHosting&#x2F;&#x2F;TUFZ-Img&#x2F;cover&#x2F;cover2.jpg&quot;, &quot;Cover2&quot;],</span><br><span class="line">		[&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;TUFZ&#x2F;ImgHosting&#x2F;&#x2F;TUFZ-Img&#x2F;cover&#x2F;cover8.png&quot;, &quot;Cover8&quot;]</span><br><span class="line">]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>albums 里存放的就是图片了，每一个 [] 前面的部分是图片的 URL，后面的部分是图片名称，当然你还可以编写一些代码来美化你的相册</p>
+<p>最后一步，给你的相册配置一个入口路径，我是配置在侧边栏的，所以打开主题配置文件，在 menu 中添加一条配置：<code>相册: /photos</code></p>
 <blockquote>
 <p>害，当时就该遇到问题记录一下， 现在都不知道我遇到了什么问题，尴尬😅，未完… … 这个坑一定要填</p>
 </blockquote>
@@ -408,7 +417,7 @@
         </div>
         <div  style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #F26BAE; margin: 5px 3px 5px 3px;">
           <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">WordCount</span>
-          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #F26BAE !important;">10.3k</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #F26BAE !important;">10.6k</span>
         </div>
       </div>
       <!-- </li>
@@ -433,7 +442,7 @@
       <!-- 
       <li>
         <i class="fas fa-chart-area"></i>
-        <span class="post-count">WordCount: 10.3k</span>
+        <span class="post-count">WordCount: 10.6k</span>
       </li>
     </ul> 原版-->
   </div>
