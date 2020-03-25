@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">705字</span>
+            <span class="post-count">1.1k字</span>
         </span>
     </span>
 
@@ -74,7 +74,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2分钟</span>
+            <span class="post-count">4分钟</span>
         </span>
     </span>
 </div>
@@ -134,13 +134,28 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">    meting: true</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建歌单页面"><a href="#创建歌单页面" class="headerlink" title="创建歌单页面"></a>创建歌单页面</h2><p>👉<a href="https://www.itufz.com/playlist/" target="_blank" rel="noopener">这里</a>👈是我的歌单界面</p>
-<p>1、首先我们新建一个 playlist 页面（在站点根目录下运行如下代码）</p>
+<p>1、首先我们新建一个 playlist </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page playlist</span><br></pre></td></tr></table></figure>
 
 <p>2、配置 playlist</p>
-<p>执行完新建页面命令之后，在 <code>Hexo\source</code> 文件夹下面会生成一个 playlist 文件夹，该文件夹里面有一个 index.md文件，这个 <code>.md</code> 文件会经过渲染解析生成 playlist 页面，所以我们所有关于页面的代码都在这里编写，注意：Markdown 真的很强大，可以在里面直接写前端代码</p>
-<h2 id="使用-aplayer-给文章添加音乐导致-TOC-失效"><a href="#使用-aplayer-给文章添加音乐导致-TOC-失效" class="headerlink" title="使用 aplayer 给文章添加音乐导致 TOC 失效"></a>使用 aplayer 给文章添加音乐导致 TOC 失效</h2><p>暂时未解决，该问题可能只在主题 ayer 上出现，其他主题未测试</p>
-<h2 id="使用-aplayer-添加-playlist-的音乐更新时间"><a href="#使用-aplayer-添加-playlist-的音乐更新时间" class="headerlink" title="使用 aplayer 添加 playlist 的音乐更新时间"></a>使用 aplayer 添加 playlist 的音乐更新时间</h2><p>我的博客音乐来自网易云音乐，每当网易云音乐收藏里更新了音乐之后，一般 12 个小时之后博客才会更新</p>
+<p>执行完新建页面命令之后，在 <code>Hexo\source</code> 文件夹下面会生成一个 playlist 文件夹，该文件夹里面有一个 index.md文件，这个 <code>.md</code> 文件会经过渲染解析生成 playlist 页面，所以我们所有关于页面的代码都在这里编写</p>
+<p><strong>注意：</strong>Markdown 真的很强大，可以在里面直接写前端代码</p>
+<p>以下是我的 index.md</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 音乐</span><br><span class="line">date: 2020-03-20 12:24:57</span><br><span class="line">type: &quot;playlist&quot;</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">音乐的力量💪</span><br><span class="line"></span><br><span class="line">&#123;% meting &quot;4924170567&quot; &quot;netease&quot; &quot;playlist&quot; &quot;theme:#FF4081&quot; &quot;mode:circulation&quot; &quot;mutex:true&quot; &quot;listmaxheight:340px&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上 <code>4924170567</code> 是歌单的 id，随后 “netease” 表示音乐平台是网易云音乐，后面的可以默认或者查看官方说明进行修改</p>
+<p>3、配置访问路径</p>
+<p>至此我们的 playlist 页面已经准备好了，但是还没有访问入口，所以我们应该在主题配置文件里配置访问路径</p>
+<p>打开 <code>F:\Blog\TUFZ\Hexo\themes\ayer\_config.yml</code>，一般第一条配置就是 menu，先看一下我的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 侧边栏菜单</span><br><span class="line">menu:</span><br><span class="line">  主页: &#x2F;</span><br><span class="line">  归档: &#x2F;archives</span><br><span class="line">  分类: &#x2F;categories</span><br><span class="line">  标签: &#x2F;tags</span><br><span class="line">  相册: &#x2F;photos</span><br><span class="line">  音乐: &#x2F;playlist</span><br><span class="line">  关于我: &#x2F;about</span><br></pre></td></tr></table></figure>
+
+<p>可以理解为 <code>/</code> 表示 <code>F:\Blog\TUFZ\Hexo\source</code> 文件夹，所以音乐的路径就是 <code>/playlist</code>，至此该页面已经完全配置完成</p>
+<h2 id="给文章添加音乐"><a href="#给文章添加音乐" class="headerlink" title="给文章添加音乐"></a>给文章添加音乐</h2><p>在文章中添加音乐只需要在文章中加入一段代码，示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 示例文章</span><br><span class="line">date: 2020-03-25 09:34:11</span><br><span class="line">tags:</span><br><span class="line">    - Blog</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#123;% meting &quot;3986040&quot; &quot;netease&quot; &quot;song&quot; &quot;theme:#555&quot; &quot;mutex:true&quot; &quot;listmaxheight:340px&quot; &quot;preload:auto&quot; %&#125;</span><br><span class="line"></span><br><span class="line">这是我的演示文章，将上面的代码添加在哪个位置音乐就会出现在文章的哪个位置，上面的 &#96;3986040&#96; 是歌曲的 id，&quot;netease&quot; 表示音乐资源来自于网易云音乐，后面的可以默认</span><br></pre></td></tr></table></figure>
+
+<p>aplayer 是支持给单篇文章添加音乐的，但是我在使用中却发现：当我给文章添加了音乐之后，文章的 TOC 就不能使用了</p>
+<p>该问题暂时未解决，该问题可能只在主题 ayer 上出现，其他主题未测试</p>
+<h2 id="音乐更新时间"><a href="#音乐更新时间" class="headerlink" title="音乐更新时间"></a>音乐更新时间</h2><p>我是使用网易云音乐歌单来实现音乐页面的歌曲更新的，每当网易云音乐歌单收藏里更新了音乐之后，一般 12 个小时之后博客才会更新</p>
 <blockquote>
 <p>害，当时就该遇到问题记录一下， 现在都不知道我遇到了什么问题，尴尬😅，未完… … 这个坑一定要填</p>
 </blockquote>
@@ -393,7 +408,7 @@
         </div>
         <div  style="display: inline-block; border-radius: 4px; text-shadow: none; font-size: 12px; color: #fff; line-height: 15px; background-color: #F26BAE; margin: 5px 3px 5px 3px;">
           <span style="display: inline-block; background-color: #4D4D4D; padding: 4px 5px 4px 6px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">WordCount</span>
-          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #F26BAE !important;">9.9k</span>
+          <span style="display: inline-block; padding: 4px 6px 4px 2px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-color: #F26BAE !important;">10.3k</span>
         </div>
       </div>
       <!-- </li>
@@ -418,7 +433,7 @@
       <!-- 
       <li>
         <i class="fas fa-chart-area"></i>
-        <span class="post-count">WordCount: 9.9k</span>
+        <span class="post-count">WordCount: 10.3k</span>
       </li>
     </ul> 原版-->
   </div>
